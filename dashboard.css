@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 220px;
+    background: #003366;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+.sidebar-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 24px 0 18px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #1a4166;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+.sidebar ul li {
+    border-bottom: 1px solid #1a4166;
+}
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 16px 30px;
+    transition: background 0.2s;
+}
+.sidebar ul li a:hover {
+    background: #1a4166;
+}
+
+.main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    min-height: 100vh;
+    background: #f4f6f8;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.navbar-title {
+    font-size: 1.2em;
+    color: #003366;
+    font-weight: bold;
+}
+.navbar-user {
+    color: #003366;
+    font-size: 1em;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 30px 40px;
+    text-align: center;
+    flex: 1;
+}
+.card h2 {
+    margin: 0 0 10px 0;
+    font-size: 2.2em;
+    color: #003366;
+}
+.card p {
+    margin: 0;
+    color: #666;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 98vw;
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        border-bottom: 1px solid #1a4166;
+    }
+    .sidebar-title {
+        padding: 12px;
+        font-size: 1.2em;
+        border-bottom: none;
+    }
+    .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .sidebar ul li {
+        border-bottom: none;
+        border-right: 1px solid #1a4166;
+    }
+    .sidebar ul li:last-child {
+        border-right: none;
+    }
+    .sidebar ul li a {
+        padding: 12px 18px;
+    }
+}
